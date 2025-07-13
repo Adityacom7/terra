@@ -4,7 +4,7 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-  varible "name"{}
+  variable "name"{}
   variable "ami" {}
   variable "instance_type" {}
   variable "key_name"{}
