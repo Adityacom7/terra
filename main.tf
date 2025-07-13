@@ -2,9 +2,7 @@ module "sg" {
     source = "./modules/sg"
     name=ec2sg
     vpc_id=aws_vpc.main.id
-    tags = {
-        Name = "ec2sg"
-        }
+    name = "ec2sg"
 }
 
 module "iam" {
