@@ -1,4 +1,4 @@
-aws_region="us_east_1"
+aws_region="us-east-1"
 name = "Adibhai"
 ami = "ami-020cba7c55df1f615"
 instance_type = "t2.small"
