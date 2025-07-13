@@ -7,10 +7,13 @@ resource "aws_instance" "prv"{
     iam_instance_profile = var.iam_instance_profile 
     user_data = var.user_data
     
+    
     root_block_device {
       volume_size = 10
     volume_type = "gp2"
   
     }
     tags = var.tags
+
+  
 }
