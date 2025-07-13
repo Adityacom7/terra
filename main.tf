@@ -5,8 +5,9 @@ resource "aws_vpc" "main" {
   tags = {
     Name = "main-vpc"
   }
+}
 
-  resource "aws_subnet" "main" {
+resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
@@ -14,8 +15,8 @@ resource "aws_vpc" "main" {
   tags = {
     Name = "main-subnet"
   }
- }
 }
+
 
 module "sg" {
     source = "./modules/sg"
