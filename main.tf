@@ -5,6 +5,16 @@ resource "aws_vpc" "main" {
   tags = {
     Name = "main-vpc"
   }
+
+  resource "aws_subnet" "main" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "us-east-1a"
+
+  tags = {
+    Name = "main-subnet"
+  }
+ }
 }
 
 module "sg" {
@@ -36,7 +46,7 @@ module "ec2" {
     instance_type = var.instance_type
     subnet_id = aws_subnet.main.id
     security_group_ids = module.sg.security_group_ids
-    iam_instance_profile = module.iam.instance_profile_name
+    iam_instance_profile = module.iam.instance_profile
     key_name = var.key_name
     tags = {
         Name = "my-ec2-instance"
