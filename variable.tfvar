@@ -1,0 +1,5 @@
+aws_region="us_east_1"
+name = "Adibhai"
+ami = "ami-020cba7c55df1f615"
+instance_type = "t2.small"
+key_name = "adefs"
