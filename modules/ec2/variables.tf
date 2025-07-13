@@ -1,5 +1,8 @@
 variable "ami" {}
-variable "vpc_security_group_ids"{}
+variable "vpc_security_group_ids"{
+  type = list(string)
+  description = "List of security group IDs to associate with the EC2 instance."
+}
 variable "instance_type" {}
 variable "subnet_id" {}
 variable "iam_instance_profile" {}
