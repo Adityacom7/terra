@@ -46,7 +46,7 @@ module "ec2" {
     ami= var.ami
     instance_type = var.instance_type
     subnet_id = aws_subnet.main.id
-    security_group_ids = module.sg.sg_id
+    vpc_security_group_ids = module.sg.sg_id
     iam_instance_profile = module.iam.instance_profile
     key_name = var.key_name
     tags = {
